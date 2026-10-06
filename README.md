@@ -1,6 +1,6 @@
 # 数模国赛建模与验证 Skills
 
-把数学建模竞赛中的理论审查、算法实现、实验核验、论文对齐与匿名交付整理为可复用的 Codex 技能。当前技能：`cumcm-modeling`。
+把数学建模竞赛中的理论审查、算法实现、实验核验、论文对齐与支撑材料交付整理为可复用的 Codex 技能。当前技能：`cumcm-modeling`。
 
 ## 如何用
 
@@ -50,7 +50,7 @@
 | [理论审查](skills/cumcm-modeling/references/theory-review.md) | 模型假设、证明、反例、最优性边界与文献 |
 | [算法与验证](skills/cumcm-modeling/references/algorithm-validation.md) | 基线、固定案例、独立确认、尾部风险与统计 |
 | [官方测试](skills/cumcm-modeling/references/official-testing.md) | 授权、预检、未知动作、退出与导出闭环 |
-| [论文与交付](skills/cumcm-modeling/references/paper-delivery.md) | 最小同步、图表、源码附录、匿名包与AI披露 |
+| [论文与交付](skills/cumcm-modeling/references/paper-delivery.md) | 最小同步、图表、源码附录、支撑包与AI披露 |
 | [工作账本](skills/cumcm-modeling/assets/work-ledger-template.md) | 项目状态、模型与证据映射模板 |
 
 ## 维护方式
@@ -71,6 +71,8 @@
 结构核验与文档规则检查不等于行为效果评测；真实使用时仍需检查产物和执行边界。遇到失败可提交匿名复现提示、预期行为、实际行为、技能版本与脱敏证据，供后续迭代。
 
 ## 范围与隐私
+
+Git 提交使用用户现有身份，无需匿名。代码支撑文件按具体题目要求提供；只有官方或用户明确要求时才进行身份匿名处理，不把其他项目的匿名约定当作国赛通用要求。仓库的私有权限与提交身份是两个独立设置。
 
 这是从建模协作实践提炼的方法库，不是官方竞赛规则。模型参数、评分与 AI 政策以具体题目和当届官方要求为准。没有模拟器的题目无需执行官方测试流程。
 

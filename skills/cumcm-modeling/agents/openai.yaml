@@ -1,4 +1,4 @@
 interface:
   display_name: "数模国赛建模与验证"
-  short_description: "贯通理论推导、算法优化、实验核验、论文及匿名支撑材料的国赛工作流"
+  short_description: "贯通理论推导、算法优化、实验核验、论文及代码支撑材料的国赛工作流"
   default_prompt: "使用 $cumcm-modeling 按当前题目和已有证据推进建模，审查理论缺口并完成必要验证与交付。"
