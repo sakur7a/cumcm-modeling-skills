@@ -1,16 +1,59 @@
 \usepackage[a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
-\usepackage{amsmath,amssymb,amsthm,booktabs,tabularx,graphicx,listings,xcolor}
+\usepackage{amsmath,amssymb,amsthm,booktabs,tabularx,longtable,multirow,graphicx,listings,xcolor}
+\usepackage{titlesec,caption,enumitem}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
 \hypersetup{pdftitle={\papertitle},pdfauthor={},pdfsubject={数学建模写作模板}}
 \setlength{\parindent}{2em}
-\linespread{1.25}
+% Paper_3 uses these system fonts; TeX fonts keep the template portable.
+\IfFontExistsTF{SimSun}{\setCJKmainfont[AutoFakeBold=2]{SimSun}}{}
+\IfFontExistsTF{SimHei}{\setCJKsansfont[AutoFakeBold=2]{SimHei}}{}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{Arial}{\setsansfont{Arial}}{\setsansfont{TeX Gyre Heros}}
+\renewcommand{\songti}{\CJKfamily{\CJKrmdefault}}
+\renewcommand{\heiti}{\CJKfamily{\CJKsfdefault}}
+\makeatletter
+\renewcommand{\normalsize}{\@setfontsize\normalsize{12.05}{14.45}}
+\makeatother
+\linespread{1.35}
 \pagestyle{plain}
-\newtheorem{proposition}{命题}[section]
-\newtheorem{definition}{定义}[section]
+\renewcommand{\thesection}{\chinese{section}、}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\titleformat{\section}{\centering\heiti\zihao{3}\bfseries}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\heiti\zihao{4}\bfseries}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\heiti\zihao{-4}\bfseries}{\thesubsubsection}{0.8em}{}
+\titlespacing{\section}{0pt}{1.2em}{0.8em}
+\titlespacing{\subsection}{0pt}{1em}{0.5em}
+\titlespacing{\subsubsection}{0pt}{0.8em}{0.4em}
+\captionsetup{font=small,labelsep=quad,skip=6pt}
+\captionsetup[table]{position=top}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\lstlistingname}{代码}
+\setlist{leftmargin=2em,itemsep=0.25em,parsep=0pt}
+\theoremstyle{definition}
+\newtheorem{proposition}{命题}
+\newtheorem{definition}{定义}
+\crefname{proposition}{命题}{命题}
+\crefname{section}{节}{节}
+\crefname{algocf}{算法}{算法}
+\SetAlgorithmName{算法}{算法}{算法列表}
+\SetKwInput{KwInput}{输入}
+\SetKwInput{KwOutput}{输出}
+\SetKw{KwRetCN}{返回}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
 \renewcommand{\proofname}{证明}
+\renewenvironment{proof}{\par\noindent{\heiti 证明}\quad\ignorespaces}
+  {\nobreak\hfill$\blacksquare$\par}
 \newcommand{\R}{\mathbb{R}}
 \lstset{language=Python,basicstyle=\ttfamily\footnotesize,
   numbers=left,numberstyle=\tiny,breaklines=true,columns=fullflexible,
-  frame=single,showstringspaces=false,tabsize=4}
+  frame=single,showstringspaces=false,tabsize=4,
+  backgroundcolor=\color{black!3},keywordstyle=\color{blue!50!black},
+  commentstyle=\color{green!35!black}}
 \newcommand{\placeholderfigure}{%
   \fbox{\parbox[c][25mm][c]{0.85\linewidth}{\centering 图位置示例：替换为真实科研图片}}}

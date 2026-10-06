@@ -1,10 +1,21 @@
 # 开箱即用的中文数模论文模板
 
-这是一份从零编写的通用写作模板，不复制旧比赛论文或第三方比赛专用类文件。使用 TeX 发行版提供的 `ctexart` 和 Fandol 字体；仓库自身文件以根目录 MIT 许可发布，外部 TeX 组件仍使用各自许可证。
+这是一份参考作者项目 `paper_3` 实际格式、自行实现的写作模板，不复制旧论文正文或未注明再分发许可的竞赛专用类文件。使用 TeX 发行版提供的 `ctexart`；仓库自身文件以根目录 MIT 许可发布，外部 TeX 组件仍使用各自许可证。
+
+## 对齐 paper_3 的格式
+
+- A4、四边25 mm，正文12.05 pt，行距倍率1.35，段首缩进2字。
+- 题名与摘要标题三号加粗，摘要和关键词独占首页，无目录、无身份封面。
+- 一级标题居中黑体三号，用“一、二、三”编号；二级四号、三级小四，编号为1.1、1.1.1。
+- 页码底部居中、无页眉线；图表中文题注、三线表，代码标题为“代码”。
+- 问题重述、分析、假设、符号、各问模型、检验、评价顺序与paper_3对应；AI声明位于参考文献前，证明、明细和代码置于附录。
+- 有宋体、黑体、Times New Roman和Arial时优先使用；缺失则回退Fandol与TeX Gyre字体，不要求Windows专用字体。回退字体的字形与分页可能不同，不声称逐像素一致。
+
+这些是作者项目格式，不是对当前或未来竞赛官方要求的认证；提交前按当届要求确认。
 
 ## 立即编译
 
-安装带有 XeLaTeX、CTeX、Fandol 和常用宏包的 TeX Live / MiKTeX / TinyTeX，以及 Python 3.9+。模板不需要 Python 第三方包、BibTeX、外部图片或特定系统中文字体。
+安装带有 XeLaTeX、CTeX、Fandol、TeX Gyre、titlesec、algorithm2e、cleveref 和常用宏包的 TeX Live / MiKTeX / TinyTeX，以及 Python 3.9+。模板不需要 Python 第三方包、BibTeX、外部图片或特定系统中文字体。
 
 复制整个 `latex-paper` 目录到参赛项目的 `paper/`，在该目录运行：
 
@@ -27,20 +38,20 @@ xelatex -interaction=nonstopmode -halt-on-error main.tex
 
 | 文件 | 内容 |
 |---|---|
-| config.tex | 题名、关键词、模板提示开关 |
+| config.tex | 题名、关键词、模板提示开关、三四问开关、AI声明 |
 | preamble.tex | 字体、版心、公式、表格、命题与代码样式 |
 | sections/01-summary.tex | 摘要与关键词 |
-| sections/02-problem.tex | 问题分析、假设与符号 |
-| sections/03-model.tex | 模型、命题、推导与最优性边界 |
-| sections/04-algorithm.tex | 算法、停止条件及实现映射 |
-| sections/05-validation.tex | 指标、实验、对照、敏感性与局限 |
-| sections/06-conclusion.tex | 结论、参考文献与代码附录 |
+| sections/01-restatement.tex 至 04-notation.tex | 重述、分析、假设与符号 |
+| sections/05-model-q1.tex 至 08-model-q4.tex | 各问模型、算法与理论边界 |
+| sections/09-validation.tex、10-evaluation.tex | 检验、结果与评价 |
+| sections/references.tex | 参考文献填写位置 |
+| sections/A1-proofs.tex、A2-tables.tex、A4-support-files.tex | 证明、统计口径与代码支撑 |
 | ai-usage.tex | 独立AI工具使用说明 |
 | examples/demo.py | 可运行教学示例，生成表格与CSV |
 
 模板内使用一维稳健优化教学问题展示“证明—程序—表格”闭环，数据明确标注为演示，不是比赛实验。正文所有内容均需按真实题目替换；图框是占位，引用位置提示也不是可提交文献。附录程序通过 `\lstinputlisting` 引用完整源文件，避免手工复制后失配。
 
-题号多少按题目调整，不强制四问。需要第三问或第四问时复制模型小节并明确新约束，不照搬教学模型。参考文献替换为真正核验的来源后再加入 `\cite{...}`。若使用Python入口，更新 examples/ 与 build.py 的演示生成部分为项目真实数据处理入口。
+题号多少按题目调整，不强制四问。默认保留三四问占位，可在config.tex中改为 `\extendedquestionsfalse` 关闭；实际三四问需明确新约束，不照搬教学模型。参考文献替换为真正核验的来源后再加入 `\cite{...}`。若使用Python入口，更新 examples/ 与 build.py 的演示生成部分为项目真实数据处理入口。
 
 ## 与协作流程配合
 

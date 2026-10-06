@@ -1,0 +1,22 @@
+\section{问题一的模型建立与求解}
+\subsection{目标与可行域}
+\begin{equation}\label{eq:objective}
+ J(x)=(x-2)^2,\qquad
+ \min_{x\in[0,4]}\max_{|e|\leq\delta}(x+e-2)^2.
+\end{equation}
+目标、可行域与误差模型如式\eqref{eq:objective}所示。
+\begin{proposition}\label{prop:optimum}
+$J_{\mathrm{rob}}(x;\delta)=(|x-2|+\delta)^2$。
+唯一最优解为 $x^*=2$，最优值为 $\delta^2$。
+\end{proposition}
+证明见附录\ref{app:proof}，只适用于本教学模型。
+\subsection{求解步骤与实现}
+程序直接返回解析解，计算名义与稳健目标，入口为\texttt{examples/demo.py}。
+\begin{algorithm}[htbp]
+\caption{教学模型解析求解}
+\KwInput{扰动半径 $\delta\geq0$}
+\KwOutput{最优点与最坏损失}
+$x^*\leftarrow2$\;
+$v^*\leftarrow\delta^2$\;
+\KwRetCN{$(x^*,v^*)$}\;
+\end{algorithm}

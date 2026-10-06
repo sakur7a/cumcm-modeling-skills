@@ -5,15 +5,36 @@
 \input{preamble}
 \begin{document}
 \begin{center}
-  {\zihao{2}\bfseries \papertitle\par}
+  {\zihao{3}\bfseries \papertitle\par}
 \end{center}
 \ifdraft
 \begin{center}\small 模板演示文档：所有教学内容须在真实论文中替换。\end{center}
 \fi
 \input{sections/01-summary}
-\input{sections/02-problem}
-\input{sections/03-model}
-\input{sections/04-algorithm}
-\input{sections/05-validation}
-\input{sections/06-conclusion}
+\clearpage
+\label{page:body-start}
+\input{sections/01-restatement}
+\input{sections/02-analysis}
+\input{sections/03-assumptions}
+\input{sections/04-notation}
+\input{sections/05-model-q1}
+\input{sections/06-model-q2}
+\ifextendedquestions
+\input{sections/07-model-q3}
+\input{sections/08-model-q4}
+\fi
+\input{sections/09-validation}
+\input{sections/10-evaluation}
+\section*{AI工具使用声明}
+\aistatement
+\input{sections/references}
+\label{page:body-end}
+\clearpage
+\appendix
+\titleformat{\section}{\centering\heiti\zihao{3}\bfseries}{附录\thesection}{0.8em}{}
+\renewcommand{\thesubsection}{\Alph{section}.\arabic{subsection}}
+\input{sections/A1-proofs}
+\input{sections/A2-tables}
+\clearpage
+\input{sections/A4-support-files}
 \end{document}

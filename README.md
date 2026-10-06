@@ -8,6 +8,8 @@
 
 排版预览：[论文示例 PDF](templates/latex-paper/preview/main.pdf) · [AI 使用说明模板 PDF](templates/latex-paper/preview/ai-usage.pdf)。
 
+论文模板参照作者项目 `paper_3` 的摘要首页、中文章节编号、十个正文入口和附录结构，自行实现可公开的排版配置；详细参数和字体回退见模板说明。
+
 ## 如何用
 
 在 Codex 中打开实际参赛项目，提供题目与附件的文件路径，然后在消息中写 `$cumcm-modeling` 和当前任务。技能是工作方法，不是某道题的完整算法，不自动获取上一个项目的聊天记录、代码或数据，也不保证理论全局最优。
