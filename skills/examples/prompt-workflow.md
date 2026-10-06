@@ -83,4 +83,4 @@
 - 论文模板只承载真实结论：先填方法与证据，再写摘要和评价，勿让模板示例变成比赛结果。
 - 将通用经验回馈技能仓库，项目参数、真实成绩和敏感日志留在各自项目中。
 
-开箱模板见 [LaTeX 模板](../templates/latex-paper/README.md)，更多独立场景见 [提示词库](prompt-examples.md)。
+开箱模板见 [LaTeX 模板](../../latex-template/README.md)，更多独立场景见 [提示词库](prompt-examples.md)。

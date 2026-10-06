@@ -56,7 +56,7 @@ xelatex -interaction=nonstopmode -halt-on-error main.tex
 ## 与协作流程配合
 
 ```text
-使用 $cumcm-modeling，采用 templates/latex-paper 作为论文起点。
+使用 $cumcm-modeling，采用 latex-template 作为论文起点。
 先将已验证模型、采用算法和真实实验映射到章节，删除教学示例。
 保持未解决的理论边界和数据来源说明，最后根据真实结论填写摘要。
 按本届要求核对格式，编译并检查页面；只生成文件，不上传提交。
