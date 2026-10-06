@@ -1,0 +1,19 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\documentclass[UTF8,fontset=fandol,zihao=-4]{ctexart}
+\input{config}
+\input{preamble}
+\begin{document}
+\begin{center}
+  {\zihao{2}\bfseries \papertitle\par}
+\end{center}
+\ifdraft
+\begin{center}\small 模板演示文档：所有教学内容须在真实论文中替换。\end{center}
+\fi
+\input{sections/01-summary}
+\input{sections/02-problem}
+\input{sections/03-model}
+\input{sections/04-algorithm}
+\input{sections/05-validation}
+\input{sections/06-conclusion}
+\end{document}

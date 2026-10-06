@@ -5,3 +5,9 @@ Thumbs.db
 .env
 .env.*
 *.local.json
+**/build/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz

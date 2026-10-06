@@ -1,0 +1,17 @@
+\section{算法设计与实现}
+教学模型直接返回解析解 $x^*=2$，再计算基线点 $1$ 与解析解的目标值。
+程序不靠有限误差采样证明最坏界，公式已由前节证明。
+真实问题应说明输入输出、步骤、停止条件、失败处理和复杂度。
+
+\begin{table}[htbp]
+\centering
+\caption{教学示例的理论与实现映射}
+\begin{tabularx}{\linewidth}{lX}
+\toprule 内容 & 对应入口 \\
+\midrule
+名义及稳健目标 & \texttt{examples/demo.py} 的 \texttt{objectives} \\
+演示表格生成 & 同文件 \texttt{main}，输出到 \texttt{generated/} \\
+论文构建 & \texttt{build.py}，双遍编译正文和AI说明 \\
+\bottomrule
+\end{tabularx}
+\end{table}

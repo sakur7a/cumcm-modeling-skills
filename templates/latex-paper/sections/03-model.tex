@@ -1,0 +1,25 @@
+\section{模型建立与理论分析}
+\subsection{教学问题的目标与可行域}
+\begin{equation}
+\label{eq:objective}
+  J(x)=(x-2)^2,\qquad
+  \min_{x\in[0,4]} J_{\mathrm{rob}}(x)
+  =\min_{x\in[0,4]}\max_{|e|\leq0.1}(x+e-2)^2.
+\end{equation}
+式\eqref{eq:objective}明确了策略空间、目标和误差模型。
+
+\begin{proposition}
+在上述条件下，$J_{\mathrm{rob}}(x)=(|x-2|+0.1)^2$，
+唯一最优解为 $x^*=2$，最优值为 $0.01$。
+\end{proposition}
+\begin{proof}
+由三角不等式，$|x+e-2|\leq|x-2|+0.1$。
+当 $x\geq2$ 时取 $e=0.1$，当 $x<2$ 时取 $e=-0.1$，均达到该上界。
+故最坏损失等于该上界的平方，并仅在 $|x-2|=0$ 时达到最小值。
+点 $2$ 位于可行域，结论成立。
+\end{proof}
+
+\subsection{适用边界与各问依赖}
+该证明不适用于任意高维模型、未知可行域或不同损失函数。
+实际题目应逐问写明新增信息、约束和算法依赖；有限采样最优不等于连续全局最优。
+无法闭合的命题须说明具体缺口，给反例、修正模型或合法上下界。

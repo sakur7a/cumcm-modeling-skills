@@ -1,0 +1,16 @@
+\usepackage[a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,tabularx,graphicx,listings,xcolor}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={\papertitle},pdfauthor={},pdfsubject={数学建模写作模板}}
+\setlength{\parindent}{2em}
+\linespread{1.25}
+\pagestyle{plain}
+\newtheorem{proposition}{命题}[section]
+\newtheorem{definition}{定义}[section]
+\renewcommand{\proofname}{证明}
+\newcommand{\R}{\mathbb{R}}
+\lstset{language=Python,basicstyle=\ttfamily\footnotesize,
+  numbers=left,numberstyle=\tiny,breaklines=true,columns=fullflexible,
+  frame=single,showstringspaces=false,tabsize=4}
+\newcommand{\placeholderfigure}{%
+  \fbox{\parbox[c][25mm][c]{0.85\linewidth}{\centering 图位置示例：替换为真实科研图片}}}

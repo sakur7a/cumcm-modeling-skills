@@ -2,6 +2,12 @@
 
 把数学建模竞赛中的理论审查、算法实现、实验核验、论文对齐与支撑材料交付整理为可复用的 Codex 技能。当前技能：`cumcm-modeling`。
 
+本仓库以 MIT 许可开源。除了技能，还提供[我的 Prompt 协作流程](docs/prompt-workflow.md)、[可复制提示词](docs/prompt-examples.md)和[可直接编译的中文 LaTeX 论文模板](templates/latex-paper/README.md)。从目标与边界开始，以证明、代码和实验推进，最后形成与证据一致的论文和支撑材料。
+
+快速开始：安装技能，在参赛项目中提供题目与附件；复制 `templates/latex-paper` 为项目论文目录，运行 `python build.py`。先核对教学示例的编译，再逐步替换为实际模型与结果。
+
+排版预览：[论文示例 PDF](templates/latex-paper/preview/main.pdf) · [AI 使用说明模板 PDF](templates/latex-paper/preview/ai-usage.pdf)。
+
 ## 如何用
 
 在 Codex 中打开实际参赛项目，提供题目与附件的文件路径，然后在消息中写 `$cumcm-modeling` 和当前任务。技能是工作方法，不是某道题的完整算法，不自动获取上一个项目的聊天记录、代码或数据，也不保证理论全局最优。
@@ -34,7 +40,7 @@
 ```text
 使用 $skill-installer，从 GitHub 仓库 sakur7a/cumcm-modeling-skills
 安装路径 skills/cumcm-modeling 下的技能。
-这是私有仓库，使用现有 GitHub 登录，不要将令牌写入文件或输出。
+只安装技能目录，不复制示例为真实论文结果。
 若存在同名技能，先比较差异，不直接覆盖我的本地修改。
 ```
 
